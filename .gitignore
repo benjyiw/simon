@@ -1,3 +1,6 @@
+# Game Save Files
+*.save
+
 # Compiled class file
 *.class
 
