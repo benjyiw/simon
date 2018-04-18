@@ -32,7 +32,7 @@ public class Sequence {
 	}
 	
 	public static void addSequence() {
-		generatedSequence.add(rgby[rand.nextInt(3)]);
+		generatedSequence.add(rgby[rand.nextInt(4)]);
 	}
 	
 	public static int getCurrentScore() {
