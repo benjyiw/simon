@@ -1,6 +1,7 @@
 package simon;
 
 import java.awt.BorderLayout;
+import javax.swing.JOptionPane;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -16,6 +17,8 @@ import javax.swing.border.BevelBorder;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.awt.FlowLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Simon extends JFrame {
 
@@ -41,6 +44,8 @@ public class Simon extends JFrame {
 	 * Create the frame.
 	 */
 	public Simon() {
+		Score HiScore = new Score("test.save");
+		JOptionPane optionPane = new JOptionPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 953, 732);
 		
@@ -48,6 +53,12 @@ public class Simon extends JFrame {
 		setJMenuBar(menuBar);
 		
 		JMenuItem HiScoreBtn = new JMenuItem("Check High Scores");
+		HiScoreBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				JOptionPane.showMessageDialog(optionPane, HiScore);
+			}
+		});
 		HiScoreBtn.setHorizontalTextPosition(SwingConstants.CENTER);
 		HiScoreBtn.setBackground(new Color(124, 252, 0));
 		HiScoreBtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, new Color(192, 192, 192), new Color(64, 64, 64)));
@@ -64,6 +75,12 @@ public class Simon extends JFrame {
 		menuBar.add(PlayBtn);
 		
 		JMenuItem QuitBtn = new JMenuItem("Quit");
+		QuitBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				System.exit(0);
+			}
+		});
 		QuitBtn.setHorizontalTextPosition(SwingConstants.CENTER);
 		QuitBtn.setBackground(new Color(255, 255, 0));
 		QuitBtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, Color.LIGHT_GRAY, Color.BLACK));
