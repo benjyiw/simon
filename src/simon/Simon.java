@@ -85,7 +85,7 @@ public class Simon extends JFrame {
 		
 		JButton SimonGame = new JButton("");
 		gamePlane.setLayer(SimonGame, 1);
-		SimonGame.setIcon(new ImageIcon(Simon.class.getResource("/simon/background.png")));
+		SimonGame.setIcon(new ImageIcon(Simon.class.getResource("background.png")));
 		SimonGame.setBounds(294, 114, 308, 326);
 		gamePlane.add(SimonGame);
 		
