@@ -17,7 +17,7 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.awt.FlowLayout;
 
-public class SimonApp extends JFrame {
+public class Simon extends JFrame {
 
 	private JPanel contentPane;
 
@@ -28,7 +28,7 @@ public class SimonApp extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					SimonApp frame = new SimonApp();
+					Simon frame = new Simon();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class SimonApp extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public SimonApp() {
+	public Simon() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 953, 732);
 		
@@ -85,7 +85,7 @@ public class SimonApp extends JFrame {
 		
 		JButton SimonGame = new JButton("");
 		gamePlane.setLayer(SimonGame, 1);
-		SimonGame.setIcon(new ImageIcon(SimonApp.class.getResource("/simonGame/Simon Game.png")));
+		SimonGame.setIcon(new ImageIcon(Simon.class.getResource("/simon/background.png")));
 		SimonGame.setBounds(294, 114, 308, 326);
 		gamePlane.add(SimonGame);
 		
