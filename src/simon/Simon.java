@@ -56,7 +56,7 @@ public class Simon extends JFrame {
 		HiScoreBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				JOptionPane.showMessageDialog(optionPane, HiScore);
+				JOptionPane.showMessageDialog(optionPane, HiScore,"High Scores",JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		HiScoreBtn.setHorizontalTextPosition(SwingConstants.CENTER);
