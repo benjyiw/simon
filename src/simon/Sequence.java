@@ -39,6 +39,14 @@ public class Sequence {
 		return score;
 	}
 	
+	public static char getSequenceChar(int n) {
+		return generatedSequence.get(n);
+	}
+	
+	public static char getUserChar(int n ) {
+		return generatedSequence.get(n);
+	}
+	
 	public static boolean isOver() {
 		if(generatedSequence.size() == userGuessSequence.size()) {
 			return true;
