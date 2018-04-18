@@ -18,7 +18,7 @@ public class Sequence {
 	public static void newSequence() {
 		generatedSequence.clear();
 		for(int i = 0; i < 4; i++) {
-			generatedSequence.add(rgby[rand.nextInt(3)]);
+			generatedSequence.add(rgby[rand.nextInt(4)]);
 		}
 	}
 
