@@ -43,7 +43,7 @@ public class Sequence {
 		return generatedSequence.get(n);
 	}
 	
-	public static char getUserChar(int n ) {
+	public static char getUserChar(int n) {
 		return generatedSequence.get(n);
 	}
 	
@@ -52,6 +52,14 @@ public class Sequence {
 			return true;
 		} else {
 			return false;
+		}
+	}
+	
+	public static void pause(int ms) {
+		try {
+			Thread.sleep(ms);
+		} catch (InterruptedException e) {
+			System.out.println("Thread interrupted");
 		}
 	}
 	
