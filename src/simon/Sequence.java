@@ -5,24 +5,23 @@ import java.util.List;
 import java.util.Random;
 
 public class Sequence {
-	private static List<Character> generatedSequence = new ArrayList<>();
-	private static List<Character> userGuessSequence = new ArrayList<>();
-	private static int score = 0;
-	private static char[] rgby = {'Y', 'B', 'R', 'G'};
-	private static Random rand = new Random();
-
-	public static List<Character> getSequence() {
+	private List<Character> generatedSequence = new ArrayList<>();
+	private List<Character> userGuessSequence = new ArrayList<>();
+	private int score = 0;
+	private char[] rgby = {'Y', 'B', 'R', 'G'};
+	private Random rand = new Random();
+	
+	public List<Character> getSequence() {
 		return generatedSequence;
 	}
 	
-	public static void newSequence() {
-		generatedSequence.clear();
+	public Sequence() {
 		for(int i = 0; i < 4; i++) {
 			generatedSequence.add(rgby[rand.nextInt(4)]);
 		}
 	}
 
-	public static boolean userInput(char input) {
+	public boolean userInput(char input) {
 		userGuessSequence.add(input);
 		if(generatedSequence.get(userGuessSequence.size()-1) == userGuessSequence.get(userGuessSequence.size()-1)) {
 			return true;
@@ -31,23 +30,28 @@ public class Sequence {
 		}
 	}
 	
-	public static void addSequence() {
+	public void addSequence() {
 		generatedSequence.add(rgby[rand.nextInt(4)]);
 	}
 	
-	public static int getCurrentScore() {
+	public int getCurrentScore() {
 		return score;
 	}
 	
-	public static char getSequenceChar(int n) {
+	public char getSequenceChar(int n) {
 		return generatedSequence.get(n);
 	}
 	
-	public static char getUserChar(int n) {
+	public char getUserChar(int n) {
 		return generatedSequence.get(n);
 	}
 	
-	public static boolean isOver() {
+	
+	public List<Character> getUserGuessSequence() {
+		return userGuessSequence;
+	}
+
+	public boolean turnOver() {
 		if(generatedSequence.size() == userGuessSequence.size()) {
 			return true;
 		} else {
@@ -55,7 +59,7 @@ public class Sequence {
 		}
 	}
 	
-	public static void pause(int ms) {
+	public void pause(int ms) {
 		try {
 			Thread.sleep(ms);
 		} catch (InterruptedException e) {
