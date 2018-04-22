@@ -26,6 +26,7 @@ import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.Timer;
 import javax.swing.JLabel;
+import javax.swing.JProgressBar;
 
 public class Simon extends JFrame {
 
@@ -156,13 +157,12 @@ public class Simon extends JFrame {
             }
         });
 		
-        Score HiScore = new Score("test.save");
         JOptionPane optionPane = new JOptionPane();
         JMenuItem HiScoreBtn = new JMenuItem("Check High Scores");
 		HiScoreBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				JOptionPane.showMessageDialog(optionPane, HiScore,"High Scores",JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(optionPane, HighScore,"High Scores",JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		HiScoreBtn.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -211,8 +211,20 @@ public class Simon extends JFrame {
 		JLayeredPane gamePlane = new JLayeredPane();
 		contentPane.add(gamePlane, BorderLayout.CENTER);
 		
+		JLabel ScoreHeader = new JLabel("Current Score:");
+		ScoreHeader.setFont(new Font("Tahoma", Font.BOLD, 30));
+		gamePlane.setLayer(ScoreHeader, 1);
+		ScoreHeader.setBounds(26, 115, 231, 33);
+		gamePlane.add(ScoreHeader);
+		
+		JLabel CurrentScore = new JLabel("" + score);
+		CurrentScore.setFont(new Font("Tahoma", Font.BOLD, 34));
+		gamePlane.setLayer(CurrentScore, 1);
+		CurrentScore.setBounds(142, 160, 115, 64);
+		gamePlane.add(CurrentScore);
+		
 		turnOrder = new JLabel("");
-		turnOrder.setFont(new Font("Phosphate", Font.PLAIN, 27));
+		turnOrder.setFont(new Font("Dialog", Font.BOLD, 27));
 		turnOrder.setHorizontalTextPosition(SwingConstants.CENTER);
 		turnOrder.setHorizontalAlignment(SwingConstants.CENTER);
 		turnOrder.setBounds(255, 29, 391, 58);
@@ -228,6 +240,7 @@ public class Simon extends JFrame {
 					if(seq.turnOver()) {
 						turnOrder.setText("Correct! Score Up!");
 						score++;
+						CurrentScore.setText("" + score);
 						doNothing.start();
 						seq.getUserGuessSequence().clear();
 						nextTurn();
@@ -243,12 +256,14 @@ public class Simon extends JFrame {
 						seq.getUserGuessSequence().clear();
 						seq = new Sequence();
 						score = 0;
+						CurrentScore.setText("" + score);
 					}
 					else {
 						turnOrder.setText("No high score... try again?");
 						seq.getUserGuessSequence().clear();
 						seq = new Sequence();
 						score = 0;
+						CurrentScore.setText("" + score);
 					}
 				}
 				
@@ -258,7 +273,7 @@ public class Simon extends JFrame {
 		GreenLight.setBorderPainted(false);
 		GreenLight.setBackground(new Color(0, 128, 0));
 		gamePlane.setLayer(GreenLight, 2);
-		GreenLight.setBounds(308, 128, 113, 112);
+		GreenLight.setBounds(297, 125, 150, 152);
 		gamePlane.add(GreenLight);
 		
 		RedLight = new JButton("");
@@ -271,6 +286,7 @@ public class Simon extends JFrame {
 					if(seq.turnOver()) {
 						turnOrder.setText("Correct! Score Up!");
 						score++;
+						CurrentScore.setText("" + score);
 						doNothing.start();
 						seq.getUserGuessSequence().clear();
 						nextTurn();
@@ -286,12 +302,14 @@ public class Simon extends JFrame {
 						seq.getUserGuessSequence().clear();
 						seq = new Sequence();
 						score = 0;
+						CurrentScore.setText("" + score);
 					}
 					else {
 						turnOrder.setText("No high score... try again?");
 						seq.getUserGuessSequence().clear();
 						seq = new Sequence();
 						score = 0;
+						CurrentScore.setText("" + score);
 					}
 				}
 			}
@@ -300,7 +318,7 @@ public class Simon extends JFrame {
 		RedLight.setBorderPainted(false);
 		RedLight.setBackground(new Color(139, 0, 0));
 		gamePlane.setLayer(RedLight, 1);
-		RedLight.setBounds(477, 128, 110, 112);
+		RedLight.setBounds(458, 125, 150, 152);
 		gamePlane.add(RedLight);
 		
 		BlueLight = new JButton("");
@@ -313,6 +331,7 @@ public class Simon extends JFrame {
 					if(seq.turnOver()) {
 						turnOrder.setText("Correct! Score Up!");
 						score++;
+						CurrentScore.setText("" + score);
 						doNothing.start();
 						seq.getUserGuessSequence().clear();
 						nextTurn();
@@ -328,12 +347,14 @@ public class Simon extends JFrame {
 						seq.getUserGuessSequence().clear();
 						seq = new Sequence();
 						score = 0;
+						CurrentScore.setText("" + score);
 					}
 					else {
 						turnOrder.setText("No high score... try again?");
 						seq.getUserGuessSequence().clear();
 						seq = new Sequence();
 						score = 0;
+						CurrentScore.setText("" + score);
 					}
 				}
 			}
@@ -342,7 +363,7 @@ public class Simon extends JFrame {
 		BlueLight.setBorderPainted(false);
 		BlueLight.setBackground(new Color(0, 0, 205));
 		gamePlane.setLayer(BlueLight, 2);
-		BlueLight.setBounds(311, 315, 110, 112);
+		BlueLight.setBounds(297, 289, 150, 146);
 		gamePlane.add(BlueLight);
 		
 		YellowLight = new JButton("");
@@ -355,6 +376,7 @@ public class Simon extends JFrame {
 					if(seq.turnOver()) {
 						turnOrder.setText("Correct! Score Up!");
 						score++;
+						CurrentScore.setText("" + score);
 						doNothing.start();
 						seq.getUserGuessSequence().clear();
 						nextTurn();
@@ -370,12 +392,14 @@ public class Simon extends JFrame {
 						seq.getUserGuessSequence().clear();
 						seq = new Sequence();
 						score = 0;
+						CurrentScore.setText("" + score);
 					}
 					else {
 						turnOrder.setText("No high score... try again?");
 						seq.getUserGuessSequence().clear();
 						seq = new Sequence();
 						score = 0;
+						CurrentScore.setText("" + score);
 					}
 				}
 			}
@@ -384,13 +408,14 @@ public class Simon extends JFrame {
 		YellowLight.setBorderPainted(false);
 		YellowLight.setBackground(new Color(204, 204, 0));
 		gamePlane.setLayer(YellowLight, 2);
-		YellowLight.setBounds(477, 315, 110, 112);
+		YellowLight.setBounds(458, 289, 150, 146);
 		gamePlane.add(YellowLight);
 		
 		JButton SimonGame = new JButton("");
+		SimonGame.setBackground(Color.BLACK);
 		gamePlane.setLayer(SimonGame, 1);
-		SimonGame.setIcon(new ImageIcon(Simon.class.getResource("Simon Game.png")));
-		SimonGame.setBounds(294, 115, 308, 326);
+		SimonGame.setIcon(new ImageIcon(Simon.class.getResource("/simon/SimonSquares.PNG")));
+		SimonGame.setBounds(283, 115, 341, 334);
 		gamePlane.add(SimonGame);
 		
 		JButton BG = new JButton("");
@@ -402,6 +427,13 @@ public class Simon extends JFrame {
 		BG.setBackground(Color.WHITE);
 		BG.setBounds(0, 0, 911, 582);
 		gamePlane.add(BG);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(Simon.class.getResource("/simon/SimonBanner.png")));
+		gamePlane.setLayer(lblNewLabel, 2);
+		lblNewLabel.setBounds(283, 444, 341, 83);
+		gamePlane.add(lblNewLabel);
+		
 	}
 	
 	public void nextTurn() {
