@@ -75,7 +75,7 @@ public class Simon extends JFrame {
 	 */
 	public Simon() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 953, 732);
+		setBounds(100, 100, 428, 590);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -158,7 +158,7 @@ public class Simon extends JFrame {
         });
 		
         JOptionPane optionPane = new JOptionPane();
-        JMenuItem HiScoreBtn = new JMenuItem("Check High Scores");
+        JMenuItem HiScoreBtn = new JMenuItem("High Scores!");
 		HiScoreBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -172,7 +172,7 @@ public class Simon extends JFrame {
 		HiScoreBtn.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		menuBar.add(HiScoreBtn);
         
-		JMenuItem PlayBtn = new JMenuItem("Start New Game");
+		JMenuItem PlayBtn = new JMenuItem("New Game");
 		PlayBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -189,20 +189,6 @@ public class Simon extends JFrame {
 		PlayBtn.setHorizontalAlignment(SwingConstants.CENTER);
 		PlayBtn.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		menuBar.add(PlayBtn);
-		
-		JMenuItem QuitBtn = new JMenuItem("Quit");
-        QuitBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-        });
-		
-		QuitBtn.setHorizontalTextPosition(SwingConstants.CENTER);
-		QuitBtn.setBackground(new Color(255, 255, 0));
-		QuitBtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, Color.LIGHT_GRAY, Color.BLACK));
-		QuitBtn.setHorizontalAlignment(SwingConstants.CENTER);
-		QuitBtn.setFont(new Font("Segoe UI", Font.BOLD, 15));
-		menuBar.add(QuitBtn);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -212,22 +198,22 @@ public class Simon extends JFrame {
 		contentPane.add(gamePlane, BorderLayout.CENTER);
 		
 		JLabel ScoreHeader = new JLabel("Current Score:");
-		ScoreHeader.setFont(new Font("Tahoma", Font.BOLD, 30));
+		ScoreHeader.setFont(new Font("Tahoma", Font.BOLD, 25));
 		gamePlane.setLayer(ScoreHeader, 1);
-		ScoreHeader.setBounds(26, 115, 231, 33);
+		ScoreHeader.setBounds(55, 483, 341, 33);
 		gamePlane.add(ScoreHeader);
 		
 		JLabel CurrentScore = new JLabel("" + score);
 		CurrentScore.setFont(new Font("Tahoma", Font.BOLD, 34));
 		gamePlane.setLayer(CurrentScore, 1);
-		CurrentScore.setBounds(142, 160, 115, 64);
+		CurrentScore.setBounds(277, 474, 115, 48);
 		gamePlane.add(CurrentScore);
 		
 		turnOrder = new JLabel("");
 		turnOrder.setFont(new Font("Dialog", Font.BOLD, 27));
 		turnOrder.setHorizontalTextPosition(SwingConstants.CENTER);
 		turnOrder.setHorizontalAlignment(SwingConstants.CENTER);
-		turnOrder.setBounds(255, 29, 391, 58);
+		turnOrder.setBounds(6, -1, 391, 58);
 		gamePlane.add(turnOrder);
 		
 		GreenLight = new JButton("");
@@ -273,7 +259,7 @@ public class Simon extends JFrame {
 		GreenLight.setBorderPainted(false);
 		GreenLight.setBackground(new Color(0, 128, 0));
 		gamePlane.setLayer(GreenLight, 2);
-		GreenLight.setBounds(297, 125, 150, 152);
+		GreenLight.setBounds(50, 69, 150, 152);
 		gamePlane.add(GreenLight);
 		
 		RedLight = new JButton("");
@@ -318,7 +304,7 @@ public class Simon extends JFrame {
 		RedLight.setBorderPainted(false);
 		RedLight.setBackground(new Color(139, 0, 0));
 		gamePlane.setLayer(RedLight, 1);
-		RedLight.setBounds(458, 125, 150, 152);
+		RedLight.setBounds(211, 69, 150, 152);
 		gamePlane.add(RedLight);
 		
 		BlueLight = new JButton("");
@@ -363,7 +349,7 @@ public class Simon extends JFrame {
 		BlueLight.setBorderPainted(false);
 		BlueLight.setBackground(new Color(0, 0, 205));
 		gamePlane.setLayer(BlueLight, 2);
-		BlueLight.setBounds(297, 289, 150, 146);
+		BlueLight.setBounds(50, 233, 150, 146);
 		gamePlane.add(BlueLight);
 		
 		YellowLight = new JButton("");
@@ -408,14 +394,14 @@ public class Simon extends JFrame {
 		YellowLight.setBorderPainted(false);
 		YellowLight.setBackground(new Color(204, 204, 0));
 		gamePlane.setLayer(YellowLight, 2);
-		YellowLight.setBounds(458, 289, 150, 146);
+		YellowLight.setBounds(211, 233, 150, 146);
 		gamePlane.add(YellowLight);
 		
 		JButton SimonGame = new JButton("");
 		SimonGame.setBackground(Color.BLACK);
 		gamePlane.setLayer(SimonGame, 1);
 		SimonGame.setIcon(new ImageIcon(Simon.class.getResource("/simon/SimonSquares.PNG")));
-		SimonGame.setBounds(283, 115, 341, 334);
+		SimonGame.setBounds(36, 59, 341, 334);
 		gamePlane.add(SimonGame);
 		
 		JButton BG = new JButton("");
@@ -425,13 +411,13 @@ public class Simon extends JFrame {
 		});
 		BG.setOpaque(true);
 		BG.setBackground(Color.WHITE);
-		BG.setBounds(0, 0, 911, 582);
+		BG.setBounds(0, 0, 419, 534);
 		gamePlane.add(BG);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(Simon.class.getResource("/simon/SimonBanner.png")));
 		gamePlane.setLayer(lblNewLabel, 2);
-		lblNewLabel.setBounds(283, 444, 341, 83);
+		lblNewLabel.setBounds(36, 388, 341, 83);
 		gamePlane.add(lblNewLabel);
 		
 	}
