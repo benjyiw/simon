@@ -239,6 +239,10 @@ public class Simon extends JFrame {
 					turnOrder.setText("GAME OVER MAN");
 					if(HighScore.IfHighScore(score)) {
 						HighScore.AddHighScore(score, JOptionPane.showInputDialog(null, "Enter Initials Here", "High Score Got!", JOptionPane.QUESTION_MESSAGE));
+						try {
+							HighScore.SaveScores();
+						} catch(Exception ex) {
+						}
 						seq.getUserGuessSequence().clear();
 						seq = new Sequence();
 						score = 0;
@@ -285,6 +289,10 @@ public class Simon extends JFrame {
 					turnOrder.setText("GAME OVER MAN");
 					if(HighScore.IfHighScore(score)) {
 						HighScore.AddHighScore(score, JOptionPane.showInputDialog(null, "Enter Initials Here", "High Score Got!", JOptionPane.QUESTION_MESSAGE));
+						try {
+							HighScore.SaveScores();
+						} catch(Exception ex) {
+						}
 						seq.getUserGuessSequence().clear();
 						seq = new Sequence();
 						score = 0;
@@ -330,6 +338,10 @@ public class Simon extends JFrame {
 					turnOrder.setText("GAME OVER MAN");
 					if(HighScore.IfHighScore(score)) {
 						HighScore.AddHighScore(score, JOptionPane.showInputDialog(null, "Enter Initials Here", "High Score Got!", JOptionPane.QUESTION_MESSAGE));
+						try {
+							HighScore.SaveScores();
+						} catch(Exception ex) {
+						}
 						seq.getUserGuessSequence().clear();
 						seq = new Sequence();
 						score = 0;
@@ -375,6 +387,10 @@ public class Simon extends JFrame {
 					turnOrder.setText("GAME OVER MAN");
 					if(HighScore.IfHighScore(score)) {
 						HighScore.AddHighScore(score, JOptionPane.showInputDialog(null, "Enter Initials Here", "High Score Got!", JOptionPane.QUESTION_MESSAGE));
+						try {
+							HighScore.SaveScores();
+						} catch(Exception ex) {
+						}
 						seq.getUserGuessSequence().clear();
 						seq = new Sequence();
 						score = 0;
