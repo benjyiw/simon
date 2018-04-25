@@ -82,6 +82,8 @@ public class Simon extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
+		// TIMERS ARE DONE BY TRENT GREGUHN
+		
 		doNothing = new Timer(200, new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -234,6 +236,9 @@ public class Simon extends JFrame {
 		GreenLight = new JButton("");
 		GreenLight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				// EACH BUTTON'S LOGIC DONE BY TRENT GREGUHN
+				
 				GreenLight.setBackground(Color.GREEN);
 				greenTimer.stop();
 				greenTimer.start();
