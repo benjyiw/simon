@@ -1,3 +1,5 @@
+// Author: Jordan Gale, Trent Greguhn
+
 package simon;
 
 import java.awt.BorderLayout;

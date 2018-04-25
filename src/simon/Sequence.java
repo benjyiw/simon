@@ -1,3 +1,5 @@
+// Author: Trent Greguhn
+
 package simon;
 
 import java.util.ArrayList;

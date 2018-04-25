@@ -1,3 +1,5 @@
+// Author: Ben Wesemann
+
 package simon;
 
 import java.io.FileInputStream;
