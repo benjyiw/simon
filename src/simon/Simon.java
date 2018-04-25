@@ -165,10 +165,10 @@ public class Simon extends JFrame {
 				JOptionPane.showMessageDialog(optionPane, HighScore,"High Scores",JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
-		HiScoreBtn.setHorizontalTextPosition(SwingConstants.CENTER);
+		HiScoreBtn.setHorizontalTextPosition(SwingConstants.CENTER); 
 		HiScoreBtn.setBackground(new Color(124, 252, 0));
 		HiScoreBtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, new Color(192, 192, 192), new Color(64, 64, 64)));
-		HiScoreBtn.setHorizontalAlignment(SwingConstants.CENTER);
+		HiScoreBtn.setHorizontalAlignment(SwingConstants.CENTER); 
 		HiScoreBtn.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		menuBar.add(HiScoreBtn);
         
@@ -189,6 +189,19 @@ public class Simon extends JFrame {
 		PlayBtn.setHorizontalAlignment(SwingConstants.CENTER);
 		PlayBtn.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		menuBar.add(PlayBtn);
+		
+		JMenuItem quitBtn = new JMenuItem("Quit");
+		quitBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		quitBtn.setHorizontalTextPosition(SwingConstants.CENTER);
+		quitBtn.setHorizontalAlignment(SwingConstants.CENTER);
+		quitBtn.setFont(new Font("Dialog", Font.BOLD, 15));
+		quitBtn.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, Color.LIGHT_GRAY, Color.DARK_GRAY));
+		quitBtn.setBackground(Color.YELLOW);
+		menuBar.add(quitBtn);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
